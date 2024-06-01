@@ -4,14 +4,14 @@
     (keydown.enter)="search()"
   />
 
-  <div class="card">
-    <div class="card-header">Curitiba</div>
+  <div class="card" *ngIf="weatherData">
+    <div class="card-header">{{weatherData.name}}</div>
     <div class="card-block">
-      <div class="card-title">26 °C</div>
+      <div class="card-title">{{weatherData.main.temp}} °C</div>
       <div class="card-text">
-        <p>Pressure:</p>
-        <p>Humidity:</p>
-        <p>Wind:</p>
+        <p>Pressure: {{weatherData.main.pressure}}</p>
+        <p>Humidity: {{weatherData.main.humidity}}</p>
+        <p>Wind: {{weatherData.wind.speed}}</p>
       </div>
     </div>
   </div>
